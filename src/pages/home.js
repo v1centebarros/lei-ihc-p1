@@ -1,19 +1,10 @@
-import { SidebarData } from "../components/SidebarData"
+import Sidebar from "../components/Sidebar"
 const Home = () => {
     return (
         <div className="flex">
-            <div className={`w-60 h-screen bg-light-gray shadow`}>
-                <ul>
-                    {SidebarData.map((item) => {
-                        return (
-                            <li className="flex p-2 cursor-pointer items-start">
-                                {item.icon}
-                                <span>{item.name}</span>
-                            </li>)
-                    })}
-                </ul>
-            </div>
-        </div>      
+            <Sidebar></Sidebar>
+            <h1>HOME</h1>  
+        </div>
     )
 } 
 export default Home

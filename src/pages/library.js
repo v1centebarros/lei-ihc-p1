@@ -2,10 +2,10 @@ import Sidebar from "../components/Sidebar"
 
 const Library = () => {
     return (
-        < >
+        <div className="flex">
             <Sidebar></Sidebar>
-            <p>Library</p>
-        </>
+            <h1>Library</h1>  
+        </div>
     )
 }
 
