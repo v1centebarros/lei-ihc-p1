@@ -1,9 +1,9 @@
-import Linksbar from "../components/Linksbar"
+import Sidebar from "../components/Sidebar"
 
 const Search = () => {
     return (
         < >
-            <Linksbar></Linksbar>
+            <Sidebar></Sidebar>
             <p>Search</p>
         </>
     )

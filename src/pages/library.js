@@ -1,9 +1,9 @@
-import Linksbar from "../components/Linksbar"
+import Sidebar from "../components/Sidebar"
 
 const Library = () => {
     return (
         < >
-            <Linksbar></Linksbar>
+            <Sidebar></Sidebar>
             <p>Library</p>
         </>
     )

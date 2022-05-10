@@ -1,9 +1,9 @@
-import Linksbar from "../components/Linksbar"
+import Sidebar from "../components/Sidebar"
 
 const Program = () => {
     return (
         < >
-            <Linksbar></Linksbar>
+            <Sidebar></Sidebar>
             <p>Program</p>
         </>
     )
