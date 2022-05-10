@@ -4,17 +4,17 @@ export const defaultOptions = [
     {
         name: 'Home',
         path: '/',
-        icon: <HomeIcon className="p-2 h-16 w-16"/>
+        icon: <HomeIcon className="p-2 h-14 w-14 "/>
     },
     {
         name: 'Search',
         path: '/search',
-        icon: <SearchIcon className="p-2 h-16 w-16"/>
+        icon: <SearchIcon className="p-2 h-14 w-14"/>
     },
     {
         name: 'Library',
         path: '/library',
-        icon: <MusicNoteIcon className="p-2 h-16 w-16"/>
+        icon: <MusicNoteIcon className="p-2 h-14 w-14"/>
     },
 ]
 

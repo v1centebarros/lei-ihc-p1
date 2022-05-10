@@ -1,15 +1,19 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    './src/**/*.{html,js}',
+    './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {
       colors: {
         "light-gray": "#f2eaea",
         "soft-red":"#f87060",
-        "very-dark-red" : "#2e2727"
+        "very-dark-red" : "#2e2727",
+        "soft-black" : "#2c2f33"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 }
