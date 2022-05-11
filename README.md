@@ -5,7 +5,11 @@ Para correr **a primeira vez** é preciso instalar as dependências
 ```bash
 npm install
 ```
-
+# Tecnologias usadas
+- [React](https://reactjs.org/docs/)
+- [React Rounter DOM](https://reactrouter.com/docs/en/v6)
+- [Tailwind](https://tailwindcss.com/docs)
+- [Tailwind Elements](https://tailwind-elements.com/)
 
 
 ## Available Scripts
