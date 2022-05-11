@@ -2,9 +2,10 @@ import { Link } from "react-router-dom"
 import { defaultOptions,userOptions } from "../data/SidebarData"
   
 const Sidebar = () => {
+    //TODO: Fazer efeito marquee para os nomes que são demasiado grandes para aparecer 
     return (
 
-        <div className="pt-3 w-60 h-screen shadow-md bg-light-gray px-1 relative">
+        <div className="pt-3 w-60 min-h-screen shadow-md bg-light-gray px-1 relative">
             <ul className="relative">
                 {defaultOptions.map((item,index) => {
                     return (
@@ -33,7 +34,7 @@ const Sidebar = () => {
                 })}
             </ul>
 
-            <div className="flex absolute left-0 bottom-0 mb-1 px-6 cursor-pointer items-center">
+            <div className="flex absolute left-0 bottom-0 mb-1 px-6 pb-2 cursor-pointer items-center">
                 <img src="https://robohash.org/teste" className="p-2 h-16 w-16 rounded-full" alt=""/>
                 <span className="pl-2 text-xl">Bob Boss</span>
             </div>

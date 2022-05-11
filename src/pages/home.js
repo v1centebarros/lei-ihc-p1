@@ -1,31 +1,25 @@
 import Sidebar from "../components/Sidebar"
+import { homeData } from "../data/homeData"
+import { Link } from "react-router-dom"
 const Home = () => {
     return (
         <div className="flex">
             <Sidebar></Sidebar>
-            <div className="h-screen flex-1 mt-3">
-                <div class=" mx-auto lg:w-1/2 md:w-3/4 sm:w-56 container grid grid-flow-row-dense gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 ">
-                    <div class="flex justify-center">
-                        <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                            <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                            <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
-                            </a>
-                            <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                            <p class="text-gray-700 text-base mb-4">
-                                Some quick example text to build on the card title and make up the bulk of the card's
-                                content.
-                            </p>
-                            <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
-                        </div>
-                    </div>
-                </div>
-                    <div className="bg-yellow-500 square">02</div>
-                    <div className="bg-yellow-500 square">03</div>
-                    <div className="bg-yellow-500 square">04</div>
-                    <div className="bg-yellow-500 square">05</div>
-                    <div className="bg-yellow-500 square">06</div>
-                    <div className="bg-yellow-500 square">07</div>
+            <div className="h-screen flex-1 mt-3 container mx-auto max-w-7xl">
+                <div className="grid gap-1 grid-cols-1 lg:grid-cols-3 p-1 auto-rows-min gap-y-4 overflow-y-auto">
+                    <h1 className="text-6xl font-bold lg:col-span-3 md:text-5xl:text-6xl pb-2">For You</h1>
+                    { homeData.map((item,index) => {
+                        return(
+                            <div className="w-64 flex justify-center">
+                                <Link to="/program">
+                                    <div className="rounded-lg shadow-xl max-w-sm bg-light-gray pb-2">
+                                        <img className="hover:saturate-50 rounded-t-lg p-4" src={item.image} alt=""/>
+                                        <h5 className="text-very-dark-red text-center text-lg font-medium mb-2">{item.name}</h5>
+                                    </div>
+                                </Link>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>
