@@ -34,7 +34,7 @@ const Sidebar = () => {
                 })}
             </ul>
 
-            <div className="flex absolute left-0 bottom-0 mb-1 px-6 pb-2 cursor-pointer items-center">
+            <div className="flex absolute left-0 bottom-0 mb-1 px-6 pb-2 items-center">
                 <img src="https://robohash.org/teste" className="p-2 h-16 w-16 rounded-full" alt=""/>
                 <span className="pl-2 text-xl">Bob Boss</span>
             </div>

@@ -1,20 +1,19 @@
-import {MusicNoteIcon, HomeIcon, SearchIcon} from '@heroicons/react/solid'
-
+import { LibraryMusic, Search, Home} from '@mui/icons-material/';
 export const defaultOptions = [
     {
         name: 'Home',
         path: '/',
-        icon: <HomeIcon className="p-2 h-14 w-14 "/>
+        icon: <Home className="p-2" sx={{ fontSize: 60 }}/>
     },
     {
         name: 'Search',
         path: '/search',
-        icon: <SearchIcon className="p-2 h-14 w-14"/>
+        icon: <Search className="p-2" sx={{ fontSize: 60 }}/>
     },
     {
         name: 'Library',
         path: '/library',
-        icon: <MusicNoteIcon className="p-2 h-14 w-14"/>
+        icon: <LibraryMusic className="p-2" sx={{ fontSize: 60 }}/>
     },
 ]
 
