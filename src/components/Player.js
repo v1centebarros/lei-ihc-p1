@@ -12,7 +12,7 @@ const Player = () => {
             { isPlaying ? 
             <PlayArrow onClick={()=>setIsPlaying(!isPlaying)} className="text-very-dark-red bg-soft-red relative -top-9 ml-5 rounded-full" sx={{ fontSize: 70 }}/>
             :
-            <Pause onClick={()=>setIsPlaying(!isPlaying)} className="text-very-dark-red bg-soft-red relative -top- ml-5 rounded-full" sx={{ fontSize: 70 }}/>
+            <Pause onClick={()=>setIsPlaying(!isPlaying)} className="text-very-dark-red bg-soft-red relative -top-9 ml-5 rounded-full" sx={{ fontSize: 70 }}/>
             }
             <VolumeUp className="text-soft-red my-auto" sx={{ fontSize: 40 }}/>
             <input type="range" className="my-auto pl-3 w-24 form-range appearance-none h-6 p-0 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none "/>
