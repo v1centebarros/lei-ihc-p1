@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 
 const SmallSidebar = () => {
     return (
-        <div className="pt-3 w-20< h-full shadow-md bg-light-gray px-1 relative">
-                    <ul className="relative items-center">
+        <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
+                    <ul className="relative">
                         {defaultOptions.map((item,index) => {
                         return (
                             <Link key={index} to={item.path}>
