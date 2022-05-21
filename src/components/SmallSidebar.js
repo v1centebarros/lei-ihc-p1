@@ -8,7 +8,7 @@ const SmallSidebar = () => {
                         {defaultOptions.map((item,index) => {
                         return (
                             <Link key={index} to={item.path}>
-                                <li className="flex items-center text-sm h-12 overflow-hidden whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                                <li className="flex items-center py-4 px-2 text-sm h-12 overflow-hidden whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
                                     {item.icon}
                                 </li>
                             </Link>
@@ -22,7 +22,7 @@ const SmallSidebar = () => {
                         {userOptions.map((item,index) => {
                         return (
                             <Link key={index} to={item.path}>
-                                <li className="flex items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                                <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
                                     <img src={item.imgPath} className="p-2 h-14 w-14 rounded-full" alt=""/>
                                 </li>
                             </Link>
