@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { defaultOptions,userOptions } from "../data/SidebarData"
   
 const Sidebar = () => {
-    //TODO: Fazer efeito marquee para os nomes que são demasiado grandes para aparecer 
     return (
 
         <div className="pt-3 w-60 min-h-screen shadow-md bg-light-gray px-1 relative">
