@@ -1,6 +1,6 @@
-const Banner = () => {
+const Banner = (props) => {
     return (
-        <div className=" w-full bg-[url('https://images.rfm.sapo.pt/cafe_da_manha_2020_fb59699d93.png')] h-3/5 bg-no-repeat bg-cover bg-center">
+        <div className={`w-full h-3/5 bg-no-repeat bg-cover bg-center`} style={{ backgroundImage:`url(${props.img_url})`}}>
         </div>
     )
 }

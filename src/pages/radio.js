@@ -1,6 +1,6 @@
 
 import Banner from "../components/Banner"
-import SmallSidebar from "../components/SmallSidebar"
+import Sidebar from "../components/Sidebar"
 import Player from "../components/Player"
 import { homeData } from "../data/homeData"
 import { chatData } from "../data/chatData"
@@ -9,13 +9,13 @@ const Radio = () => {
     return (
         <div className="h-screen flex flex-col overflow-y-hidden">
             <div className="flex">
-                <SmallSidebar></SmallSidebar>
+                <Sidebar></Sidebar>
                 <div className="w-screen h-screen overflow-y-hidden flex flex-col">
-                    <Banner></Banner>
+                    <Banner img_url="https://images.rfm.sapo.pt/cafe_da_manha_2020_fb59699d93.png"/>
 
-                    <div className="overflow-y-hidden flex">
+                    <div className="overflow-y-hidden flex h-full">
                         
-                        <div className="pl-3 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
+                        <div className="pl-10 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
 
                             <div className="flex flex-wrap w-full h-min items-end">
                                 <h1 className="mt-8 text-6xl font-bold pb-2">Radio Comercial</h1>
@@ -30,7 +30,7 @@ const Radio = () => {
 
                             <div className="flex flex-wrap w-full mb-8">
                                 <h1 className="mt-8 text-4xl font-bold pb-1 w-full">Popular Shows</h1>
-                                <div className="flex flex-wrap gap-4 mx-auto">
+                                <div className="flex flex-wrap gap-4">
                                     { homeData.map((item,index) => {
                                         return (
                                             <div key={index} className="w-48">
@@ -47,7 +47,7 @@ const Radio = () => {
                                 
                                 
                                 <h1 className="mt-8 text-4xl font-bold pb-1 w-full">Popular Shows</h1>
-                                <div className="flex flex-wrap gap-4 mx-auto">
+                                <div className="flex flex-wrap gap-4">
                                     { homeData.map((item,index) => {
                                         return (
                                             <div key={index} className="w-48">
@@ -63,7 +63,7 @@ const Radio = () => {
                                 </div>
 
                                 <h1 className="mt-8 text-4xl font-bold pb-1 w-full">Popular Shows</h1>
-                                <div className="flex flex-wrap gap-4 mx-auto">
+                                <div className="flex flex-wrap gap-4">
                                     { homeData.map((item,index) => {
                                         return (
                                             <div key={index} className="w-48">
