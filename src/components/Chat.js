@@ -18,8 +18,8 @@ const Chat = () => {
                                     }
                                 </div>
 
-                                <div className="mx-auto items-center rounded-3xl pb-5">
-                                    <input type="text" className="pb-4 mb-5 px-3 h-16 block w-full italic bg-transparent text-gray-700 text-xl rounded " placeholder="Write your message here"/>
+                                <div className="items-center bg-neutral-100 ">
+                                    <input type="text" className="px-3 block w-full italic bg-transparent text-very-dark-red text-xl rounded " placeholder="Write your message here"/>
                                 </div>
                             </div>
     )
