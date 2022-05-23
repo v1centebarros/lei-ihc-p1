@@ -1,6 +1,7 @@
 import Sidebar from "../components/Sidebar"
 import ContentBar from "../components/Contentbar"
 import { homeData } from "../data/homeData"
+import Player from "../components/Player"
 const Library = () => {
     return (
         <div className="flex h-screen">
@@ -18,6 +19,7 @@ const Library = () => {
 
                     <ContentBar title={"Keep Watching 1"} content={homeData}/>
                 </div>
+                <Player></Player>
             </div>
         </div>
     )
