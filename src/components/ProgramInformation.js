@@ -11,7 +11,7 @@ const ProgramInformation = (props) => {
                 <p className="mb-4 text-2xl text-justify font-light text-[#858585]">{props.description}</p>
                 { props.categories.map((category, index)=>{
                     return (
-                        <div className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">{category}</div>
+                        <div key={index} className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">{category}</div>
                     )
                 })}
             </div>
