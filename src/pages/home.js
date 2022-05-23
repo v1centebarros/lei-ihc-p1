@@ -1,11 +1,11 @@
-import Sidebar from "../components/Sidebar"
+import SmallSidebar from "../components/SmallSidebar"
 import Player from "../components/Player"
 import { homeData } from "../data/homeData"
 import { Link } from "react-router-dom"
 const Home = () => {
     return (
         <div className="flex h-screen">
-            <Sidebar></Sidebar>
+            <SmallSidebar></SmallSidebar>
             <div className="h-screen w-screen overflow-y-hidden flex flex-col">
                 <div className="mx-auto mt-3 overflow-y-auto scrollbar-hide mb-auto">
                     <h1 className="my-8 text-6xl font-bold pb-2">For You</h1>
