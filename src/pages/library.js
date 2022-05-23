@@ -2,9 +2,10 @@ import Sidebar from "../components/Sidebar"
 
 const Library = () => {
     return (
-        <div className="flex">
+        <div className="flex h-screen">
             <Sidebar></Sidebar>
-            <h1>Library</h1>  
+            <div className="bg-lime-300 h-screen w-screen overflow-y-hidden flex flex-col">
+            </div>
         </div>
     )
 }

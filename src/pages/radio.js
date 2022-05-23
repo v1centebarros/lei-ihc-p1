@@ -5,6 +5,7 @@ import Player from "../components/Player"
 import { homeData } from "../data/homeData"
 import Chat from "../components/Chat"
 import RadioContentBar from "../components/RadioContentBar"
+import RadioInformation from "../components/RadioInformation"
 
 const Radio = () => {
     return (
@@ -18,19 +19,9 @@ const Radio = () => {
                         
                         <div className="pl-10 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
 
-                            <div className="flex flex-wrap w-full h-min items-end">
-                                <h1 className="mt-8 text-7xl font-bold pb-2">Radio Comercial</h1>
-                                <button type="button" className="h-8 inline-block ml-3 mb-3 px-6 border-2 border-soft-red text-soft-red font-bold text-xs leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Following</button>
-                            </div>
-
-                            <div className="flex flex-wrap w-full h-min items-center">
-                                <div className="rounded-full bg-red-800 h-5 w-5"></div>
-                                <span className="pl-2 font-bold text-xl">Live now:</span>
-                                <span className="pl-2 font-light text-xl">Café da manhã</span>
-                            </div>
+                            <RadioInformation name={"Rádio Comercial"} live={"Que barulho é este?"}/>
 
                             <div className="flex flex-wrap w-full mb-8">
-                                
                                 <RadioContentBar title={"Popular Shows 1"} content={homeData} />
                                 <RadioContentBar title={"Popular Shows 2"} content={homeData} />
                                 <RadioContentBar title={"Popular Shows 3"} content={homeData} />
