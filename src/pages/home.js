@@ -8,9 +8,9 @@ const Home = () => {
             <Sidebar></Sidebar>
             <div className="h-screen w-screen overflow-y-hidden flex flex-col">
                 <div className="mx-auto mt-3 overflow-y-auto scrollbar-hide mb-auto">
-                    <ContentBar title={"Keep Watching 1"} content={homeData}/>
-                    <ContentBar title={"Keep Watching 2"} content={homeData}/>
-                    <ContentBar title={"Keep Watching 3"} content={homeData}/>
+                    <ContentBar title={"For You"} content={homeData}/>
+                    <ContentBar title={"Your Radios"} content={homeData}/>
+                    <ContentBar title={"Keep Watching"} content={homeData}/>
                 </div>
                 <Player></Player>
             </div>
