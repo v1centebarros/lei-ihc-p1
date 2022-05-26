@@ -36,4 +36,11 @@ export const userOptions = [
         imgPath: "https://cidade.iol.pt/images/noCover.png",
         path:"/radio",
     },
+    {
+        name: "Mega Hits",
+        id: 3,
+        imgPath: "https://cdn.popcasts.pt/wp-content/uploads/2021/04/MEGA-HITS.jpg",
+        path:"/radio",
+    },
+
 ]

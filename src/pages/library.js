@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar"
 import ContentBar from "../components/Contentbar"
-import { homeData } from "../data/homeData"
+import { libraryData } from "../data/libraryData"
 import Player from "../components/Player"
 const Library = () => {
     return (
@@ -17,7 +17,7 @@ const Library = () => {
                 </div>
                 <div className="pl-20 overflow-y-auto scrollbar-hide mb-auto">
 
-                    <ContentBar title={"Keep Watching 1"} content={homeData}/>
+                    <ContentBar title={"All"} content={libraryData}/>
                 </div>
                 <Player></Player>
             </div>
