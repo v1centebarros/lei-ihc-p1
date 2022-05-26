@@ -21,7 +21,7 @@ const Search = () => {
                         <RecentBar title={"Recently Searched"} content={homeData}/>
                     </div>
                 
-                    <h1 className="ml-16 my-8 text-6xl font-bold pb-2">Top Genres</h1>
+                    <h1 className="pl-20 my-8 text-6xl font-bold pb-2">Top Genres</h1>
                     <div className="flex flex-wrap gap-4 justify-center">
 
                         { genreData.map((item,index) => {

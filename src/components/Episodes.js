@@ -1,13 +1,13 @@
 import { episodesData } from "../data/episodesData"
 import {PlayArrow, Favorite, AccessTime } from '@mui/icons-material';
 
-const Episodes = () => {
+const   Episodes = () => {
     return (
         < >
             { episodesData.map((item, index) => {
                 return (
                     <div key={index} className="flex h-56 w-1/2 mt-2">
-                        <img src={item.image_url} className="p-1 max-w-sm" alt="..."/>
+                        <img src={item.image_url} className="p-1 w-64" alt="..."/>
                         <div className="pl-4">
                             <p className="text-lg text-justify font-light text-[#858585]">{item.date}</p>
                             <p className="text-2xl pb-2 text-justify text-very-dark-red">{item.title}</p>
