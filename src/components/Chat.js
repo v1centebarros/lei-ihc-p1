@@ -1,7 +1,6 @@
 import { useState} from "react"
 
 const Chat = (props) => {
-    console.log(props)
     const [messages, setMessage] = useState(props.messages)
     
     return ( 

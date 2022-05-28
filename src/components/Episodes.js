@@ -1,7 +1,38 @@
 import { episodesData } from "../data/episodesData"
-import {PlayArrow, Favorite, AccessTime } from '@mui/icons-material';
+import {PlayArrow, Favorite, AccessTime, AccessTimeFilledRounded,FavoriteBorderRounded } from '@mui/icons-material';
+import {useParams} from 'react-router-dom'
+import useLocalStorage from "react-use-localstorage"
+const Episodes = () => {
+    let { rid, pid } = useParams();
+    const [favourites,setFavourites] = useLocalStorage('favourites', "[]");
+    const [watchLater,setWatchLater] = useLocalStorage('watchLater', "[]");
 
-const   Episodes = () => {
+    const updateFavourites = (id) => {
+        let newFavourites = JSON.parse(favourites);
+        if (newFavourites.some(item => item.radio === rid && item.program === pid && item.episode === id)) {
+            newFavourites = newFavourites.filter(function(item) {
+                return !(item.radio === rid && item.program ===pid && item.episode === id);
+            })
+        } else {
+            newFavourites.push({radio:rid, program:pid, episode:id});
+        }
+        setFavourites(JSON.stringify(newFavourites));    
+    }
+
+    const updateWatchLater = (id) => {
+        let newWatchLater = JSON.parse(watchLater);
+        if (newWatchLater.some(item => item.radio === rid && item.program === pid && item.episode === id)) {
+            newWatchLater = newWatchLater.filter(function(item) {
+                return !(item.radio === rid && item.program ===pid && item.episode === id);
+            })
+        } else {
+            newWatchLater.push({radio:rid, program:pid, episode:id});
+        }
+        setWatchLater(JSON.stringify(newWatchLater));
+    }
+
+
+
     return (
         < >
             { episodesData.map((item, index) => {
@@ -16,8 +47,19 @@ const   Episodes = () => {
                                 <PlayArrow className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
                                 <p className="pl-2 text-2xl mt-auto text-justify text-soft-red">{item.time} min.</p>
                                 <div className="ml-auto">
-                                    <AccessTime className="text-soft-red relative rounded-full " sx={{ fontSize: 44 }}/>
-                                    <Favorite className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+
+                                    {
+                                        JSON.parse(favourites).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
+                                        <Favorite onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            :
+                                        <FavoriteBorderRounded onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                    }
+
+                                    { JSON.parse(watchLater).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
+                                        <AccessTimeFilledRounded onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            :
+                                        <AccessTime onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                    }
                                 </div>
                             </div>
                         </div>

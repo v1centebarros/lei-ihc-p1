@@ -10,6 +10,8 @@ import { useState } from "react"
 const Library = () => {
     const [option, setOption] = useState("All")
     const [data, setData] = useState(libraryData)
+    const [radios, setRadios] = useLocalStorage("radios", "[]")
+
     const filterMode = (option) =>{
         switch (option) {
             case "all":
@@ -29,7 +31,7 @@ const Library = () => {
 
             case "radios":
                 setOption("Radios")
-                setData(libraryData.filter(item => item.type === "radio"))
+                setData(fullData.filter(item => JSON.parse(radios).includes(item.id)))
                 break
 
             case "shows":
