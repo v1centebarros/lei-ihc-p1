@@ -2,7 +2,7 @@ export const fullData = [{
     id: 1,
     name: "Rádio Comercial",
     icon: "https://cdn6.aptoide.com/imgs/e/c/d/ecda4b53f0e126b3f39edc6d7036328f_icon.png?w=128",
-    banner: "",
+    banner: "https://images.rfm.sapo.pt/cafe_da_manha_2020_fb59699d93.png",
     liveNow: "Que barulho é este?",
     programs: [{
         id: 1,
