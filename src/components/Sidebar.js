@@ -1,4 +1,5 @@
 import { userOptions, defaultOptions } from "../data/SidebarData"
+import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
 
 const Sidebar = () => {
@@ -21,9 +22,9 @@ const Sidebar = () => {
                     <ul className="relative">
                         {userOptions.map((item,index) => {
                         return (
-                            <Link key={index} to={item.path}>
+                            <Link key={index} to={"/radio/"+index}>
                                 <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                                    <img src={item.imgPath} className="p-2 h-14 w-14 rounded-full" alt=""/>
+                                    <img src={fullData[index].icon}  className="p-2 h-14 w-14 rounded-full" alt=""/>
                                 </li>
                             </Link>
                         )
