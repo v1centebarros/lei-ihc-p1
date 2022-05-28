@@ -1,7 +1,7 @@
 import { userOptions, defaultOptions } from "../data/SidebarData"
 import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
-
+import {Add} from '@mui/icons-material';
 const Sidebar = () => {
     return (
         <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
@@ -29,6 +29,9 @@ const Sidebar = () => {
                             </Link>
                         )
                         })}
+                        <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                            <Add className="ml-2 rounded-full text-very-dark-red" sx={{ fontSize: "2.8rem" }}/>
+                        </li>
                     </ul>
                     <div className="flex absolute left-0 bottom-0 mb-1 pb-2 items-center">
                         <img src="https://robohash.org/teste" className="p-2 h-16 w-16 rounded-full" alt=""/>

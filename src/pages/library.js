@@ -2,7 +2,11 @@ import Sidebar from "../components/Sidebar"
 import ContentBar from "../components/Contentbar"
 import { libraryData } from "../data/libraryData"
 import Player from "../components/Player"
+import { fullData } from "../data/fullData"
+import useLocalStorage from "react-use-localstorage"
 import { useState } from "react"
+
+
 const Library = () => {
     const [option, setOption] = useState("All")
     const [data, setData] = useState(libraryData)

@@ -1,14 +1,36 @@
 import {PlayArrow, Pause} from '@mui/icons-material/';
 import {useState} from "react"
+import useLocalStorage from 'react-use-localstorage';
 const RadioInformation = (props) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [followingRadios, setFollowingRadios] = useLocalStorage('radios', "[]");
+
+    const updateFollowingRadios = (id) => {
+        let newFollowingRadios = JSON.parse(followingRadios);
+        if (newFollowingRadios.includes(id)) {
+            newFollowingRadios = newFollowingRadios.filter(item => item !== id);
+        } else {
+            newFollowingRadios.push(id);
+        }
+        setFollowingRadios(JSON.stringify(newFollowingRadios));
+    }
+
     return(
         <>
             <div className="flex flex-wrap w-full h-min items-end">
                 <h1 className="mt-8 text-7xl font-bold pb-2">{props.name}</h1>
                 
-                {/* Ver se está following */}
-                <button type="button" className="h-11 w-44 inline-block ml-3 mb-3 px-6 border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Following</button>
+                { followingRadios.includes(props.radioId) ? 
+                        
+                    <button onClick={() => updateFollowingRadios(props.radioId)} type="button" className="h-11 w-44 inline-block ml-3 mb-3 px-6 border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                        Following
+                    </button>
+                    :
+                    <button onClick={() => updateFollowingRadios(props.radioId)} type="button" className="h-11 w-44 inline-block ml-3 mb-3 px-6 border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                        Follow
+                    </button>
+                }
+
             
             </div>
 
