@@ -1,6 +1,5 @@
 import Sidebar from "../components/Sidebar"
 import ContentBar from "../components/Contentbar"
-import { libraryData } from "../data/libraryData"
 import Player from "../components/Player"
 import { fullData } from "../data/fullData"
 import useLocalStorage from "react-use-localstorage"
@@ -8,10 +7,42 @@ import { useState } from "react"
 
 
 const Library = () => {
-    const [option, setOption] = useState("All")
-    const [data, setData] = useState(libraryData)
-    const [radios, setRadios] = useLocalStorage("radios", "[]")
+    const compileData = () => {
+        let newData = []
+        let newRadios = JSON.parse(radios)
+        let newFavourites = JSON.parse(favourites)
+        let newWatchLater = JSON.parse(watchLater)
+        let newPrograms = JSON.parse(programs)
 
+        newRadios.forEach(item => {
+            newData.push({type:"radio",name: fullData[item].name,image:fullData[item].icon, path: "/radio/"+item})
+        })
+
+        newFavourites.forEach(item => {
+            newData.push({type:"favourite",name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+        })
+
+        newWatchLater.forEach(item => {
+            newData.push({type:"watchLater",name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+        })
+
+        newPrograms.forEach(item => {
+            newData.push({type:"show",name: fullData[item.radio].programs[item.program].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+        })
+
+        return newData
+    }   
+    
+    
+    const [option, setOption] = useState("All")
+    const [radios, setRadios] = useLocalStorage("radios", "[]")
+    const [favourites, setFavourites] = useLocalStorage("favourites", "[]")
+    const [programs, setPrograms] = useLocalStorage("programs", "[]")
+    const [watchLater, setWatchLater] = useLocalStorage("favourites", "[]")
+
+    const libraryData = compileData()
+    const [data, setData] = useState(libraryData)
+    console.log(libraryData)
     const filterMode = (option) =>{
         switch (option) {
             case "all":
@@ -21,17 +52,17 @@ const Library = () => {
 
             case "favourites":
                 setOption("Favourites")
-                setData(libraryData)
+                setData(libraryData.filter(item => item.type === "favourite"))
                 break
 
             case "watchLater":
                 setOption("Watch Later")
-                setData(libraryData)
+                setData(libraryData.filter(item => item.type === "watchLater"))
                 break
 
             case "radios":
                 setOption("Radios")
-                setData(fullData.filter(item => JSON.parse(radios).includes(item.id)))
+                setData(libraryData.filter(item => item.type === "radio"))
                 break
 
             case "shows":
@@ -40,7 +71,6 @@ const Library = () => {
                 break
 
             default:
-                //setOption("All")
                 setData(libraryData)
         }
     }

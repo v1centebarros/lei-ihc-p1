@@ -27,6 +27,20 @@ export const fullData = [{
                         description: "Joana Marques fala-nos da atribulada lua de mel de Tiago e Dina, participantes do \"Casados à primeira vista\".",
                         date: "21/04/2022",
                         time: "15"
+                    },
+                    {
+                        id: 2,
+                        name: "Rúben Semedo é Alerta CM",
+                        description: "Joana Marques fala-nos da mais recente polémica envolvendo Ruben Semedo.",
+                        date: "22/04/2022",
+                        time: "14"
+                    },
+                    {
+                        id: 3,
+                        name: "O Último a Trair",
+                        description: "Joana Marques fala-nos da atribulada lua de mel de Tiago e Dina, participantes do \"Casados à primeira vista\".",
+                        date: "21/04/2022",
+                        time: "15"
                     }
                 ],
             },
