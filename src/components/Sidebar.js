@@ -2,7 +2,11 @@ import { userOptions, defaultOptions } from "../data/SidebarData"
 import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
 import {Add} from '@mui/icons-material';
+import useLocalStorage from "react-use-localstorage";
 const Sidebar = () => {
+
+    const [radios, setRadios] = useLocalStorage("radios", [])
+ 
     return (
         <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
                     <ul className="relative">
@@ -20,11 +24,11 @@ const Sidebar = () => {
                     <hr className="mx-auto border-solid bg-soft-black h-0.5 w-4/5 content-center mb-2 mt-2"/>
 
                     <ul className="relative">
-                        {userOptions.map((item,index) => {
+                        {JSON.parse(radios).map((item,index) => {
                         return (
-                            <Link key={index} to={"/radio/"+index}>
+                            <Link key={index} to={"/radio/"+item}>
                                 <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                                    <img src={fullData[index].icon}  className="p-2 h-14 w-14 rounded-full" alt=""/>
+                                    <img src={fullData[item].icon}  className="p-2 h-14 w-14 rounded-full" alt=""/>
                                 </li>
                             </Link>
                         )
