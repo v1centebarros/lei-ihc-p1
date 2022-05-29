@@ -42,7 +42,6 @@ const Library = () => {
 
     const libraryData = compileData()
     const [data, setData] = useState(libraryData)
-    console.log(libraryData)
     const filterMode = (option) =>{
         switch (option) {
             case "all":

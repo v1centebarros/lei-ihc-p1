@@ -6,7 +6,6 @@ import Program from './pages/program'
 import Library from './pages/library'
 import Search from './pages/search'
 import NotFound from './pages/notFound'
-import Tests from './pages/tests'
 function App() {
   return (
 	<BrowserRouter>
@@ -16,7 +15,6 @@ function App() {
 			<Route path="/radio/:rid/program/:pid" element={<Program />} />
 			<Route path="/library" element={<Library />} />
 			<Route path="/search" element={<Search />} />
-			<Route path="/tests" element={<Tests />} />
 			<Route path="/*" element={<NotFound />} />
 		</Routes>
 	</BrowserRouter>
