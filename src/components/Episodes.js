@@ -37,13 +37,13 @@ const Episodes = () => {
         < >
             { fullData[rid].programs[pid].episodes.map((item, index) => {
                 return (
-                    <div key={index} className="flex h-56 w-1/2 mt-2">
-                        <img src={fullData[rid].programs[pid].icon} className="p-1 w-64" alt="..."/>
-                        <div className="pl-4">
-                            <p className="text-lg text-justify font-light text-[#858585]">{item.date}</p>
+                    <div key={index} className="flex h-56 w-1/2 mt-2 mb-10">
+                        <img src={fullData[rid].programs[pid].icon} className="p-1 w-1/3" alt="..."/>
+                        <div className="pl-4 w-2/3">
+                            <p className="text-lg text-justify font-light text-[#858585] ">{item.date}</p>
                             <p className="text-2xl pb-2 text-justify text-very-dark-red">{item.name}</p>
-                            <p className="text-xl text-justify font-light text-[#858585]">{item.description}</p>
-                            <div className="flex flex-row flex-wrap align-bottom pt-10">
+                            <div className="text-xl text-justify font-light text-[#858585] h-fit line-clamp-4">{item.description}</div>
+                            <div className="flex flex-row flex-wrap align-bottom">
                                 <PlayArrow className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
                                 <p className="pl-2 text-2xl mt-auto text-justify text-soft-red">{item.time} min.</p>
                                 <div className="ml-auto">
