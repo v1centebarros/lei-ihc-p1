@@ -27,12 +27,12 @@ const Search = () => {
 
                 radio.programs.forEach(program => {
                     if (program.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
-                        searchResult.push({name: program.name, path: `/radio/${radio.id}/${program.id}`,image:program.icon})
+                        searchResult.push({name: program.name, path: `/radio/${radio.id}/program/${program.id}`,image:program.icon})
                     }
 
                     program.episodes.forEach(episode => {
                         if (episode.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())){
-                            searchResult.push({name: episode.name, path: `/radio/${radio.id}/${program.id}`,image:program.icon})
+                            searchResult.push({name: episode.name, path: `/radio/${radio.id}/program/${program.id}`,image:program.icon})
                         }
                     })
                 })
