@@ -19,15 +19,32 @@ const Library = () => {
         })
 
         newFavourites.forEach(item => {
-            newData.push({type:"favourite",name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            if(!newData.some(item2 => item2.name === fullData[item.radio].programs[item.program].episodes[item.episode].name)) {
+                newData.push({type:["favourite"],name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            } else {
+                newData.forEach(item2 => {
+                    if(item2.name === fullData[item.radio].programs[item.program].episodes[item.episode].name) {
+                        item2.type.push("favourite")
+                    }
+                })
+            }
         })
 
         newWatchLater.forEach(item => {
-            newData.push({type:"watchLater",name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            if(!newData.some(item2 => item2.name === fullData[item.radio].programs[item.program].episodes[item.episode].name)) {
+                newData.push({type:["watchLater"],name: fullData[item.radio].programs[item.program].episodes[item.episode].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            } else {
+                newData.forEach(item2 => {
+                    if(item2.name === fullData[item.radio].programs[item.program].episodes[item.episode].name) {
+                        item2.type.push("watchLater")
+                    }
+                })
+            }
+
         })
 
         newPrograms.forEach(item => {
-            newData.push({type:"show",name: fullData[item.radio].programs[item.program].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            newData.push({type:["show"],name: fullData[item.radio].programs[item.program].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
         })
 
         return newData
@@ -42,7 +59,6 @@ const Library = () => {
 
     const libraryData = compileData()
     const [data, setData] = useState(libraryData)
-    console.log(libraryData)
     const filterMode = (option) =>{
         switch (option) {
             case "all":
@@ -52,12 +68,12 @@ const Library = () => {
 
             case "favourites":
                 setOption("Favourites")
-                setData(libraryData.filter(item => item.type === "favourite"))
+                setData(libraryData.filter(item => item.type.includes("favourite")))
                 break
 
             case "watchLater":
                 setOption("Watch Later")
-                setData(libraryData.filter(item => item.type === "watchLater"))
+                setData(libraryData.filter(item => item.type.includes("watchLater")))
                 break
 
             case "radios":
