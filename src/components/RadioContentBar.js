@@ -10,7 +10,7 @@ const RadioContentBar = (props) =>{
                             <Link to={"/radio/"+props.radioId+"/program/"+index}>
                                 <div className="rounded-lg shadow-xl max-w-sm bg-light-gray hover:bg-soft-red pb-2">
                                     <img className="rounded-t-lg p-4" src={item.icon} alt=""/>
-                                    <h5 className="text-very-dark-red text-center text-lg font-medium mb-2">{item.name}</h5>
+                                    <h5 className="text-very-dark-red text-center text-lg font-medium mb-2 line-clamp-1">{item.name}</h5>
                                 </div>
                             </Link>
                         </div>

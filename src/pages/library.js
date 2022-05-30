@@ -38,10 +38,11 @@ const Library = () => {
     const [radios, setRadios] = useLocalStorage("radios", "[]")
     const [favourites, setFavourites] = useLocalStorage("favourites", "[]")
     const [programs, setPrograms] = useLocalStorage("programs", "[]")
-    const [watchLater, setWatchLater] = useLocalStorage("favourites", "[]")
+    const [watchLater, setWatchLater] = useLocalStorage("watchLater", "[]")
 
     const libraryData = compileData()
     const [data, setData] = useState(libraryData)
+    console.log(libraryData)
     const filterMode = (option) =>{
         switch (option) {
             case "all":
