@@ -38,7 +38,7 @@ const RadioInformation = (props) => {
                 
                 <div className="rounded-full bg-red-800 h-5 w-5"></div>
                 <span className="pl-2 font-bold text-xl">Live now:</span>
-                <span className="pl-2 font-light text-xl">{props.live}</span>
+                <span className="pl-2 font-light text-xl">{props.liveNow}</span>
                 { isPlaying 
                 ? 
                 <PlayArrow onClick={() => setIsPlaying(!isPlaying)} className="border-2  text-soft-red border-soft-red relative rounded-full  my-auto ml-3" sx={{ fontSize: 50 }}/>

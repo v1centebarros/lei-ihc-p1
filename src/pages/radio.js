@@ -20,7 +20,7 @@ const Radio = () => {
                     <div className="overflow-y-hidden flex h-full">
                         <div className="pl-10 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
 
-                            <RadioInformation name={radioData.name} live={radioData.live} radioId={id}/>
+                            <RadioInformation name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
 
                             <div className="flex flex-wrap w-full mb-8">
                                 <RadioContentBar title={"Popular Shows 1"} content={radioData.programs} radioId={id}/>

@@ -44,7 +44,7 @@ const Library = () => {
         })
 
         newPrograms.forEach(item => {
-            newData.push({type:["show"],name: fullData[item.radio].programs[item.program].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
+            newData.push({type:["program"],name: fullData[item.radio].programs[item.program].name,image:fullData[item.radio].programs[item.program].icon, path: "/radio/"+item.radio+"/program/"+item.program})
         })
 
         return newData
@@ -52,10 +52,10 @@ const Library = () => {
     
     
     const [option, setOption] = useState("All")
-    const [radios, setRadios] = useLocalStorage("radios", "[]")
-    const [favourites, setFavourites] = useLocalStorage("favourites", "[]")
-    const [programs, setPrograms] = useLocalStorage("programs", "[]")
-    const [watchLater, setWatchLater] = useLocalStorage("watchLater", "[]")
+    const [radios] = useLocalStorage("radios", "[]")
+    const [favourites] = useLocalStorage("favourites", "[]")
+    const [programs] = useLocalStorage("programs", "[]")
+    const [watchLater] = useLocalStorage("watchLater", "[]")
 
     const libraryData = compileData()
     const [data, setData] = useState(libraryData)
@@ -78,12 +78,12 @@ const Library = () => {
 
             case "radios":
                 setOption("Radios")
-                setData(libraryData.filter(item => item.type === "radio"))
+                setData(libraryData.filter(item => item.type.includes("radio")))
                 break
 
-            case "shows":
+            case "programs":
                 setOption("Shows")
-                setData(libraryData.filter(item => item.type === "show"))
+                setData(libraryData.filter(item => item.type.includes("program")))
                 break
 
             default:
@@ -100,7 +100,7 @@ const Library = () => {
                         <div onClick={()=>{filterMode("favourites")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Favourites</div>
                         <div onClick={()=>{filterMode("watchLater")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Watch Later</div>
                         <div onClick={()=>{filterMode("radios")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Radios</div>
-                        <div onClick={()=>{filterMode("shows")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Shows</div>
+                        <div onClick={()=>{filterMode("programs")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Shows</div>
                     </div>
                 </div>
                 <div className="pl-20 overflow-y-auto scrollbar-hide mb-auto">

@@ -1,6 +1,5 @@
 import Sidebar from "../components/Sidebar"
 import Player from "../components/Player"
-import { homeData } from "../data/homeData"
 import ContentBar from "../components/Contentbar"
 const Home = () => {
     return (

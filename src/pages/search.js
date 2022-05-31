@@ -1,13 +1,12 @@
+import { useState } from "react"
+import { Link} from "react-router-dom"
+import { Search as SearchIcon }  from "@mui/icons-material" 
 import RecentBar from "../components/Recentbar"
 import ContentBar from "../components/Contentbar"
 import Sidebar from "../components/Sidebar"
-import { homeData } from "../data/homeData"
-import { Link} from "react-router-dom"
-import { genreData } from "../data/genreData"
-import { Search as SearchIcon }  from "@mui/icons-material" 
 import Player from "../components/Player"
-import { useState } from "react"
 import { fullData } from "../data/fullData"
+import { genreData } from "../data/genreData"
 const Search = () => {
 
     const [isSearching, setIsSearching] = useState(false)
@@ -56,7 +55,7 @@ const Search = () => {
                      :
                         < >
                             <div className="pl-20 mb-auto">
-                                <RecentBar title={"Recently Searched"} content={homeData}/>
+                                {/* <RecentBar title={"Recently Searched"} content={homeData}/> */}
                             </div>
                         
                             <h1 className="pl-20 my-8 text-6xl font-bold pb-2">Top Genres</h1>

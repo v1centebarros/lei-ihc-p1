@@ -6,7 +6,6 @@ import useLocalStorage from "react-use-localstorage";
 const Sidebar = () => {
 
     const [radios, setRadios] = useLocalStorage("radios", "[]")
- 
     return (
         <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
                     <ul className="relative">
