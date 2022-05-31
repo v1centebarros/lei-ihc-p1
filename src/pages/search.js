@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar"
 import Player from "../components/Player"
 import { fullData } from "../data/fullData"
 import { genreData } from "../data/genreData"
+import { homeData } from "../data/homeData"
 const Search = () => {
 
     const [isSearching, setIsSearching] = useState(false)
@@ -55,21 +56,22 @@ const Search = () => {
                      :
                         < >
                             <div className="pl-20 mb-auto">
-                                {/* <RecentBar title={"Recently Searched"} content={homeData}/> */}
+                                <RecentBar title={"Recently Searched"} content={homeData[1].content}/>
                             </div>
                         
                             <h1 className="pl-20 my-8 text-6xl font-bold pb-2">Top Genres</h1>
-                            <div className="flex flex-wrap gap-4 justify-center">
+                            <div className="flex flex-wrap gap-4">
 
-                                { genreData.map((item,index) => {
-                                    return (
-                                        <Link key={index} to="/program">
-                                            <div  className="relative w-96 h-72 rounded-lg" style={{ backgroundColor:`${item.color}`}}>
-                                                <span className="pl-4 font-extrabold text-4xl text-white">{item.name}</span>
+                                <div className="flex pl-20 mt-3 overflow-y-auto scrollbar-hide mb-auto">   
+                                    { genreData.map((item,index) => {
+                                        return (
+                                            <div className="h-11 w-40 pt-2 mr-2 text-center border-2 text-white font-bold text-lg leading-tight uppercase rounded-lg" style={{ backgroundColor:`${item.color}`,borderColor:`${item.color}`}}>
+                                                {item.name}
                                             </div>
-                                        </Link>
-                                    )
-                                })}
+                                            
+                                        )
+                                    })}
+                                </div>
                             </div>
                         </>
                     }
