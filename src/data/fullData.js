@@ -326,25 +326,27 @@ export const fullData = [{
     liveNow: "Que barulho é este?",
     programs: [{
         id: 0,
-        name: "Baile na Cidade",
-        description: "Todas as sextas-feiras das 23h à 01h o Baile chega à tua rádio! Entra no fim-de-semana a ouvir gostoso com as duas melhores horas seguidas de Funk ao comando do André Henriques!",
-        icon: "https://cidade.iol.pt/upload/I/imagem-site-ilbf-social.png",
-        banner: "https://cidade.iol.pt/upload/I/imagem-site-ilbf-social.png",
+        name: "Já são horas",
+        description: "Um programa que é tudo mas que, ao mesmo tempo, não é nada. Não tem dias maus mas uma coisa é garantida, dias bons não vão faltar. Não é intenso mas também não é murcho. É cedo, isso sim! Depois do barulho mais doloroso do mundo, o do despertador, liga a Cidade FM que a Laura Ferreira e o Rui Simões ajudam-te a sair da cama. Ou não... só se quiseres. Das 7h às 11h, Já São Horas de te ligares à Cidade FM, a rádio jovem mais ouvida em Portugal.",
+        icon: "https://cidade.iol.pt/upload/J/jsh_lr_-_copy.jpg",
+        banner: "https://cidade.iol.pt/upload/S/site_jsh.png",
         genres: [
             "Comedy",
             "Pop",
         ],
         episodes: [{
                 id: 0,
-                name: "Episódio #141",
-                date: "25/05/2022",
-                time: "118"
+                name: "Carlos - Café de Bairro",
+                description: "O Carlos é o autor de uma página de Instagram com mais de 100k seguidores - Café de Bairro- e a sua identidade é desconhecida. Hoje apresentou a sua voz pela primeira vez na rádio, com a Laura Ferreira e o Rui Simões.",
+                date: "27/05/2022",
+                time: "16"
             },
             {
                 id: 1,
-                name: "Episódio #140",
-                date: "16/05/2022",
-                time: "119"
+                name: "David Carreira",
+                description: "Noite Inteira é o novo single do David Carreira que vai animar o teu verão!",
+                date: "08/04/2022",
+                time: "26"
             }
         ],
     },
@@ -353,7 +355,7 @@ export const fullData = [{
         id: 1,
         name: "Helder Tavares",
         description: "Seja a que hora do dia for, é sempre o mais animado da sala! Nunca se cala mas vai tentar dar-te a melhor música sem interromper! Para além de Youtuber e Influencer, também tem a mania que é chef de cozinha e às vezes... locutor de rádio!",
-        icon: "https://cidade.iol.pt/upload/S/site_h1-social.png",
+        icon: "https://cidade.iol.pt/upload/H/helder_tavares3.png",
         banner: "https://cidade.iol.pt/upload/S/site_h1-social.png",
         genres: [
             "Comedy",
