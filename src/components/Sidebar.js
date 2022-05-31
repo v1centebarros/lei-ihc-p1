@@ -1,11 +1,11 @@
-import { userOptions, defaultOptions } from "../data/SidebarData"
+import { defaultOptions } from "../data/SidebarData"
 import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
 import {Add} from '@mui/icons-material';
 import useLocalStorage from "react-use-localstorage";
 const Sidebar = () => {
 
-    const [radios, setRadios] = useLocalStorage("radios", "[]")
+    const [radios] = useLocalStorage("radios", "[]")
     return (
         <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
                     <ul className="relative">
@@ -37,7 +37,7 @@ const Sidebar = () => {
                         </li>
                     </ul>
                     <div className="flex absolute left-0 bottom-0 mb-1 pb-2 items-center">
-                        <img src="https://robohash.org/teste" className="p-2 h-16 w-16 rounded-full" alt=""/>
+                        <img src="https://robohash.org/YourFM" className="p-2 h-16 w-16 rounded-full" alt=""/>
                     </div>
                 </div>
     )
