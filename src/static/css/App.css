@@ -3,11 +3,3 @@
 body {
   font-family: 'Merriweather Sans', sans-serif;
 }
-
-.grid {
-  height: 100vh;
-  margin: 0 0 0 0;
-  padding: 0%;
-  max-width: 100%;
-  max-height: max-content;
-}

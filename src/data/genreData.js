@@ -32,13 +32,5 @@ export const genreData = [
     {
         name : "Dark Humor",
         color: "#1391bf",
-    },
-
-    {
-        name : "Dark Humor",
-        color: "#1391bf",
-    },
-    
-    
-    
+    }  
 ]
