@@ -6,16 +6,18 @@ import Episodes from "../components/Episodes"
 import ProgramInformation from "../components/ProgramInformation"
 import { fullData } from "../data/fullData"
 import { useParams } from "react-router-dom"
-const Program = () => {
+const Program = (props) => {
     let { rid,pid } = useParams();
     let programData = fullData[rid].programs[pid]
     
+    const [followingRadios, setFollowingRadios] = props.radioData
     
 
     return (
         <div className="h-screen flex flex-col overflow-y-hidden">
             <div className="flex">
-                <Sidebar/>
+            <Sidebar radioData={[followingRadios,setFollowingRadios]}/>
+
                 <div className="w-screen h-screen overflow-y-hidden flex flex-col">
                     <Banner img_url={programData.banner}/>
 
