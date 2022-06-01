@@ -26,9 +26,9 @@ const Radio = (props) => {
                             <RadioInformation radioData={[followingRadios,setFollowingRadios]} name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
 
                             <div className="flex flex-wrap w-full mb-8">
-                                <RadioContentBar title={"Popular Shows 1"} content={radioData.programs} radioId={id}/>
-                                <RadioContentBar title={"Popular Shows 2"} content={radioData.programs} radioId={id}/>
-                                <RadioContentBar title={"Popular Shows 3"} content={radioData.programs} radioId={id}/>
+                                <RadioContentBar title={"Popular Shows"} content={radioData.programs} radioId={id}/>
+                                <RadioContentBar title={"Hot Episodes"} content={radioData.programs} radioId={id}/>
+                                {/* <RadioContentBar title={""} content={radioData.programs} radioId={id}/> */}
                             </div>
                         </div>
 
