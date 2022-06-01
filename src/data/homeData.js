@@ -57,7 +57,7 @@ export const homeData = [
                 id: 3,
                 name: "Futuro da agricultura e alterações climáticas. “Estamos a perder área de cultivo”",
                 image: "https://cdn.popcasts.pt/wp-content/uploads/2022/04/image-1648122275-2048x2048.jpg",
-                path: "/radio/1/program/0"
+                path: "/radio/4/program/1"
             }
         ]               
     },
