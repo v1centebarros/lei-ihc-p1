@@ -1,11 +1,10 @@
 import { defaultOptions } from "../data/SidebarData"
 import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
-import {Add} from '@mui/icons-material';
-import useLocalStorage from "react-use-localstorage";
-const Sidebar = () => {
+// import {Add} from '@mui/icons-material';
+const Sidebar = (props) => {
+    const [followingRadios] = props.radioData
 
-    const [radios] = useLocalStorage("radios", "[]")
     return (
         <div className="pt-3 w-20 h-full shadow-md bg-light-gray relative">
                     <ul className="relative">
@@ -23,7 +22,7 @@ const Sidebar = () => {
                     <hr className="mx-auto border-solid bg-soft-black h-0.5 w-4/5 content-center mb-2 mt-2"/>
 
                     <ul className="relative">
-                        {JSON.parse(radios).map((item,index) => {
+                        {JSON.parse(followingRadios).map((item,index) => {
                         return (
                             <Link key={index} to={"/radio/"+item}>
                                 <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
@@ -32,9 +31,9 @@ const Sidebar = () => {
                             </Link>
                         )
                         })}
-                        <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                        {/* <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
                             <Add className="ml-2 rounded-full text-very-dark-red" sx={{ fontSize: "2.8rem" }}/>
-                        </li>
+                        </li> */}
                     </ul>
                     <div className="flex absolute left-0 bottom-0 mb-1 pb-2 items-center">
                         <img src="https://robohash.org/YourFM" className="p-2 h-16 w-16 rounded-full" alt=""/>

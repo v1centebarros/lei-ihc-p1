@@ -6,7 +6,11 @@ import useLocalStorage from "react-use-localstorage"
 import { useState } from "react"
 
 
-const Library = () => {
+const Library = (props) => {
+
+    const [followingRadios, setFollowingRadios] = props.radioData
+
+
     const compileData = () => {
         let newData = []
         let newRadios = JSON.parse(radios)
@@ -92,7 +96,7 @@ const Library = () => {
     }
     return (
         <div className="flex h-screen">
-            <Sidebar/>
+            <Sidebar radioData={[followingRadios,setFollowingRadios]}/>
             <div className="h-screen w-screen overflow-y-hidden flex flex-col">
                 <div className="flex flex-wrap h-min items-start w-full mt-4 my-4">
                 <div className="flex pl-20 mt-3 overflow-y-auto scrollbar-hide mb-auto">

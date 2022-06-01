@@ -7,20 +7,23 @@ import RadioContentBar from "../components/RadioContentBar"
 import RadioInformation from "../components/RadioInformation"
 import { fullData } from "../data/fullData"
 import { useParams } from "react-router-dom"
-const Radio = () => {
+const Radio = (props) => {
     let { id } = useParams();
     let radioData = fullData[id]
+    const [followingRadios, setFollowingRadios] = props.radioData
+
     return (
         <div className="h-screen flex flex-col overflow-y-hidden">
             <div className="flex">
-                <Sidebar/>
+            <Sidebar radioData={[followingRadios,setFollowingRadios]}/>
+
                 <div className="w-screen h-screen overflow-y-hidden flex flex-col">
                     <Banner img_url={radioData.banner}/>
 
                     <div className="overflow-y-hidden flex h-full">
                         <div className="pl-10 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
 
-                            <RadioInformation name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
+                            <RadioInformation radioData={[followingRadios,setFollowingRadios]} name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
 
                             <div className="flex flex-wrap w-full mb-8">
                                 <RadioContentBar title={"Popular Shows 1"} content={radioData.programs} radioId={id}/>

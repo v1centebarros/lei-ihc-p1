@@ -6,27 +6,24 @@ import Program from './pages/program'
 import Library from './pages/library'
 import Search from './pages/search'
 import NotFound from './pages/notFound'
-import {createContext} from "react"
 import useLocalStorage from 'react-use-localstorage'
 
 function App() {
+	
+	const [followingRadios, setFollowingRadios] = useLocalStorage('radios', "[]");
 
-	const radioData = useLocalStorage("radios", "[]")
-	const RadioContext = createContext()
 	return (
-		<RadioContext.Provider value={radioData}> 
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/radio/:id" element={<Radio />} />
-					<Route path="/radio/:rid/program/:pid" element={<Program />} />
-					<Route path="/library" element={<Library />} />
-					<Route path="/search" element={<Search />} />
-					<Route path="/*" element={<NotFound />} />
-				</Routes>
-			</BrowserRouter>
-		</RadioContext.Provider>
-  );
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/radio/:id" element={<Radio radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/radio/:rid/program/:pid" element={<Program radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/library" element={<Library radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/search" element={<Search radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/*" element={<NotFound radioData={[followingRadios,setFollowingRadios]}/>} />
+			</Routes>
+		</BrowserRouter>
+  	);
 }
 
 export default App;

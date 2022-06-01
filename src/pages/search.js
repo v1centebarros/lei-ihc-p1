@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Link} from "react-router-dom"
 import { Search as SearchIcon }  from "@mui/icons-material" 
 import RecentBar from "../components/Recentbar"
 import ContentBar from "../components/Contentbar"
@@ -8,7 +7,8 @@ import Player from "../components/Player"
 import { fullData } from "../data/fullData"
 import { genreData } from "../data/genreData"
 import { homeData } from "../data/homeData"
-const Search = () => {
+const Search = (props) => {
+    const [followingRadios, setFollowingRadios] = props.radioData
 
     const [isSearching, setIsSearching] = useState(false)
     const [results, setResults] = useState("")
@@ -42,7 +42,8 @@ const Search = () => {
     }
     return (
         <div className="flex h-screen">
-            <Sidebar/>
+            <Sidebar radioData={[followingRadios,setFollowingRadios]}/>
+
             <div className="h-screen w-screen overflow-y-hidden flex flex-col">
                 <div className="flex w-1/2 ml-16 mt-8 items-center h-12 rounded">
                     <input onInput={(e) => searchFunction(e)} type="text" className="bg-neutral-200 h-12 px-3 w-96 italic bg-transparent text-very-dark-red text-xl rounded" placeholder=""/>
@@ -65,7 +66,7 @@ const Search = () => {
                                 <div className="flex pl-20 mt-3 overflow-y-auto scrollbar-hide mb-auto">   
                                     { genreData.map((item,index) => {
                                         return (
-                                            <div className="h-11 w-40 pt-2 mr-2 text-center border-2 text-white font-bold text-lg leading-tight uppercase rounded-lg" style={{ backgroundColor:`${item.color}`,borderColor:`${item.color}`}}>
+                                            <div key={index} className="h-11 w-40 pt-2 mr-2 text-center border-2 text-white font-bold text-lg leading-tight uppercase rounded-lg" style={{ backgroundColor:`${item.color}`,borderColor:`${item.color}`}}>
                                                 {item.name}
                                             </div>
                                             

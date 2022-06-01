@@ -1,9 +1,10 @@
 import {PlayArrow, Pause} from '@mui/icons-material/';
 import {useState} from "react"
-import useLocalStorage from 'react-use-localstorage';
+
 const RadioInformation = (props) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [followingRadios, setFollowingRadios] = useLocalStorage('radios', "[]");
+    const [followingRadios, setFollowingRadios] = props.radioData
+
 
     const updateFollowingRadios = (id) => {
         let newFollowingRadios = JSON.parse(followingRadios);
