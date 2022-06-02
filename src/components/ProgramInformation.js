@@ -23,7 +23,7 @@ const ProgramInformation = (props) => {
                 <h1 className="mt-8 text-7xl font-bold pb-2">{props.title}</h1>                
                 { JSON.parse(programs).some(item => (item.radio === rid && item.program === pid)) ? 
                         
-                    <button onClick={() => updatePrograms(rid,pid)} type="button" className="h-11 w-44 inline-block ml-3 mb-3 px-6 border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                    <button onClick={() => updatePrograms(rid,pid)} type="button" className="h-11 w-44 inline-block ml-3 mb-3 px-6 text-white bg-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
                         Following
                     </button>
                     :
