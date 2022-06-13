@@ -1,6 +1,7 @@
 import { defaultOptions } from "../data/SidebarData"
 import { fullData } from "../data/fullData"
 import {Link} from "react-router-dom"
+import { Tooltip } from "@material-tailwind/react";
 // import {Add} from '@mui/icons-material';
 const Sidebar = (props) => {
     const [followingRadios] = props.radioData
@@ -10,10 +11,13 @@ const Sidebar = (props) => {
                     <ul className="relative">
                         {defaultOptions.map((item,index) => {
                         return (
-                            <Link key={index} to={item.path}>
-                                <li className="flex items-center py-4 px-2 text-sm h-12 overflow-hidden whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                                    {item.icon}
-                                </li>
+                            <Link key={index} to={item.path}>  
+                                <Tooltip content={item.name} placement="right" className="text-lg">
+
+                                    <li className="flex items-center py-4 px-2 text-sm h-12 overflow-hidden whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                                        {item.icon}
+                                    </li>
+                                </Tooltip>
                             </Link>
                         )
                         })}
@@ -25,9 +29,11 @@ const Sidebar = (props) => {
                         {JSON.parse(followingRadios).map((item,index) => {
                         return (
                             <Link key={index} to={"/radio/"+item}>
-                                <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-                                    <img src={fullData[item].icon}  className="p-2 h-14 w-14 rounded-full" alt=""/>
-                                </li>
+                                <Tooltip content={fullData[item].name} placement="right" className="text-lg">
+                                    <li className="flex px-2 items-center text-sm whitespace-nowrap rounded hover:text-gray-900 hover:bg-soft-red transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="dark">
+                                        <img src={fullData[item].icon}  className="p-2 h-14 w-14 rounded-full" alt=""/>
+                                    </li>
+                                </Tooltip>
                             </Link>
                         )
                         })}

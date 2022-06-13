@@ -45,8 +45,8 @@ const Search = (props) => {
             <Sidebar radioData={[followingRadios,setFollowingRadios]}/>
 
             <div className="h-screen w-screen overflow-y-hidden flex flex-col">
-                <div className="flex w-1/2 ml-16 mt-8 items-center h-12 rounded">
-                    <input onInput={(e) => searchFunction(e)} type="text" className="bg-neutral-200 h-12 px-3 w-96 italic bg-transparent text-very-dark-red text-xl rounded" placeholder=""/>
+                <div className="flex w-1/2 pl-20 mt-8 items-center h-12 rounded">
+                    <input onInput={(e) => searchFunction(e)} type="text" className="bg-light-gray h-12 px-3 w-96 italic bg-transparent text-very-dark-red text-xl rounded" placeholder=""/>
                     <SearchIcon sx={{ fontSize: 45 }} />
                 </div>
                 <div className="h-screen overflow-y-auto scrollbar-hide">

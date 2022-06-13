@@ -1,5 +1,6 @@
-module.exports = {
-  mode: 'jit',
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({  mode: 'jit',
   content: [
     './src/**/*.{html,js}',
     './node_modules/tw-elements/dist/js/**/*.js'
@@ -19,4 +20,4 @@ module.exports = {
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/line-clamp'),
   ],
-}
+});

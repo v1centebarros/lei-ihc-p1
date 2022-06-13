@@ -1,5 +1,5 @@
 import Sidebar from "../components/Sidebar"
-import ContentBar from "../components/Contentbar"
+import LibraryContentBar from "../components/LibraryContentBar"
 import Player from "../components/Player"
 import { fullData } from "../data/fullData"
 import useLocalStorage from "react-use-localstorage"
@@ -129,7 +129,7 @@ const Library = (props) => {
                     </div>
                 </div>
                 <div className="pl-20 overflow-y-auto scrollbar-hide mb-auto">
-                    <ContentBar title={option} content={data}/>
+                    <LibraryContentBar title={option} content={data}/>
                 </div>
                 <Player></Player>
             </div>
