@@ -1,13 +1,14 @@
-import {PlayArrow, Favorite, AccessTime, AccessTimeFilledRounded,FavoriteBorderRounded } from '@mui/icons-material';
+import {PlayArrow,Pause, Favorite, AccessTime, AccessTimeFilledRounded,FavoriteBorderRounded } from '@mui/icons-material';
 import {useParams} from 'react-router-dom'
 import useLocalStorage from "react-use-localstorage"
 import { fullData } from '../data/fullData';
 import { Tooltip } from "@material-tailwind/react";
 
-const Episodes = () => {
+const Episodes = (props) => {
     let { rid, pid } = useParams();
     const [favourites,setFavourites] = useLocalStorage('favourites', "[]");
     const [watchLater,setWatchLater] = useLocalStorage('watchLater', "[]");
+    const [playing , setPlaying] = props.playingData
 
     const updateFavourites = (id) => {
         let newFavourites = JSON.parse(favourites);
@@ -46,7 +47,15 @@ const Episodes = () => {
                             <p className="text-2xl pb-2 text-justify text-very-dark-red">{item.name}</p>
                             <div className="text-xl text-justify font-light text-[#858585] h-fit line-clamp-4">{item.description}</div>
                             <div className="flex flex-row flex-wrap align-bottom">
-                                <PlayArrow className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
+                            { rid === JSON.parse(playing)[0] && pid === JSON.parse(playing)[1] && JSON.parse(playing)[2] === (''+ item.id) ?
+                                <Pause onClick={() => setPlaying(JSON.stringify("[]"))} className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
+                            :
+                                <PlayArrow onClick={() => setPlaying('["'+rid+'","'+pid+'","'+index+'"]')} className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
+                            }  
+                                
+                                
+                                
+                                
                                 <p className="pl-2 text-2xl mt-auto text-justify text-soft-red">{item.time} min.</p>
                                 <div className="ml-auto">
                                         {

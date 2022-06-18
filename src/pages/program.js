@@ -29,7 +29,7 @@ const Program = (props) => {
 
                             <div className="flex flex-col mb-8">
                                 <h1 className="mt-8 text-4xl font-bold w-full">Episodes</h1>
-                                <Episodes />
+                                <Episodes playingData={props.playingData} />
                             </div>                            
                         </div>
                     </div>

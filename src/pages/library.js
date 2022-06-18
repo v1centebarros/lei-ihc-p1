@@ -81,12 +81,12 @@ const Library = (props) => {
                 break
 
             case "radios":
-                setOption("Radios")
+                setOption("My Radios")
                 setData(libraryData.filter(item => item.type.includes("radio")))
                 break
 
             case "programs":
-                setOption("Shows")
+                setOption("My Shows")
                 setData(libraryData.filter(item => item.type.includes("program")))
                 break
 
@@ -117,14 +117,14 @@ const Library = (props) => {
                         <div onClick={()=>{filterMode("watchLater")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Watch Later</div>
                     }
                     { option === "Radios" ?
-                        <div onClick={()=>{filterMode("radios")}} className="h-11 w-40 pt-2 mr-2 text-center text-white bg-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Radios</div>
+                        <div onClick={()=>{filterMode("radios")}} className="h-11 w-40 pt-2 mr-2 text-center text-white bg-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red focus:outline-none focus:ring-0 transition duration-150 ease-in-out">My Radios</div>
                         :
-                        <div onClick={()=>{filterMode("radios")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Radios</div>
+                        <div onClick={()=>{filterMode("radios")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">My Radios</div>
                     }
                     { option === "Shows" ?
-                        <div onClick={()=>{filterMode("programs")}} className="h-11 w-40 pt-2 mr-2 text-center text-white bg-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Shows</div>
+                        <div onClick={()=>{filterMode("programs")}} className="h-11 w-40 pt-2 mr-2 text-center text-white bg-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red focus:outline-none focus:ring-0 transition duration-150 ease-in-out">My Shows</div>
                         :
-                        <div onClick={()=>{filterMode("programs")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Shows</div>
+                        <div onClick={()=>{filterMode("programs")}}className="h-11 w-40 pt-2 mr-2 text-center border-2 border-soft-red text-soft-red font-bold text-lg leading-tight uppercase rounded-lg hover:bg-soft-red hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">My Shows</div>
                     }
                     </div>
                 </div>

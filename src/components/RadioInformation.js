@@ -40,7 +40,7 @@ const RadioInformation = (props) => {
                 <div className="rounded-full bg-red-800 h-5 w-5"></div>
                 <span className="pl-2 font-bold text-xl">Live now:</span>
                 <span className="pl-2 font-light text-xl">{props.liveNow}</span>
-                { props.radioId === JSON.parse(playing)[0] ? 
+                { props.radioId === JSON.parse(playing)[0] && JSON.parse(playing).length === 1 ? 
                  
                  <Pause onClick={() => setPlaying("[]")} className="border-2  text-soft-red  border-soft-red relative rounded-full   my-auto ml-3" sx={{ fontSize: 50 }}/>
                  :

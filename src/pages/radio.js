@@ -33,7 +33,7 @@ const Radio = (props) => {
                         </div>
 
                         <div className="flex w-1/3 mb-2">
-                            { id === JSON.parse(playing)[0] ?
+                            { id === JSON.parse(playing)[0] && JSON.parse(playing).length === 1 ?
                                 <Chat messages={radioData.chat}/>
                                 :
                                 <></>
