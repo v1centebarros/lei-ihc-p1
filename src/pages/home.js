@@ -13,7 +13,8 @@ const Home = (props) => {
                     <ContentBar title={homeData[1].title} content={homeData[1].content}/>
                     <ContentBar title={homeData[2].title} content={homeData[2].content}/>
                 </div>
-                <Player playingData={[props.playingData,props.setPlayingData]}/>
+                <Player playingData={props.playingData}/>
+
 
             </div>
         </div>

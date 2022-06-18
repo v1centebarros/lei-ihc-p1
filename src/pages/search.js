@@ -77,7 +77,7 @@ const Search = (props) => {
                         </>
                     }
                 </div>
-                <Player playingData={[props.playingData,props.setPlayingData]}/>
+                <Player playingData={props.playingData}/>
 
             </div>
         </div>

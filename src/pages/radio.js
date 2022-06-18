@@ -11,6 +11,7 @@ const Radio = (props) => {
     let { id } = useParams();
     let radioData = fullData[id]
     const [followingRadios, setFollowingRadios] = props.radioData
+    const [playing] = props.playingData
     return (
         <div className="h-screen flex flex-col overflow-y-hidden">
             <div className="flex">
@@ -32,7 +33,11 @@ const Radio = (props) => {
                         </div>
 
                         <div className="flex w-1/3 mb-2">
-                            <Chat messages={radioData.chat}/>
+                            { id === JSON.parse(playing)[0] ?
+                                <Chat messages={radioData.chat}/>
+                                :
+                                <></>
+                            }
                         </div>
                     </div>
                     <Player playingData={props.playingData}/>

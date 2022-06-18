@@ -2,6 +2,8 @@ import {PlayArrow, Favorite, AccessTime, AccessTimeFilledRounded,FavoriteBorderR
 import {useParams} from 'react-router-dom'
 import useLocalStorage from "react-use-localstorage"
 import { fullData } from '../data/fullData';
+import { Tooltip } from "@material-tailwind/react";
+
 const Episodes = () => {
     let { rid, pid } = useParams();
     const [favourites,setFavourites] = useLocalStorage('favourites', "[]");
@@ -47,19 +49,25 @@ const Episodes = () => {
                                 <PlayArrow className="border-2 text-soft-red border-soft-red relative rounded-full " sx={{ fontSize: 50 }}/>
                                 <p className="pl-2 text-2xl mt-auto text-justify text-soft-red">{item.time} min.</p>
                                 <div className="ml-auto">
-
-                                    {
-                                        JSON.parse(favourites).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
-                                        <Favorite onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
-                                            :
-                                        <FavoriteBorderRounded onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
-                                    }
-
-                                    { JSON.parse(watchLater).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
-                                        <AccessTimeFilledRounded onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
-                                            :
-                                        <AccessTime onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
-                                    }
+                                        {
+                                            JSON.parse(favourites).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
+                                            <Tooltip content="Remove from Favourites" className="text-lg">
+                                                <Favorite onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            </Tooltip>
+                                                :
+                                            <Tooltip content="Add to Favourites" className="text-lg">
+                                                <FavoriteBorderRounded onClick={()=>updateFavourites(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            </Tooltip>
+                                        }
+                                        { JSON.parse(watchLater).some(item => item.radio === rid && item.program === pid && item.episode === index) ?
+                                            <Tooltip content="Remove from WatchLater" className="text-lg">
+                                                <AccessTimeFilledRounded onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            </Tooltip>
+                                                    :
+                                            <Tooltip content="Add to WatchLater" className="text-lg">
+                                                <AccessTime onClick={()=>updateWatchLater(index)} className="text-soft-red  relative rounded-full " sx={{ fontSize: 44 }}/>
+                                            </Tooltip>
+                                        }
                                 </div>
                             </div>
                         </div>

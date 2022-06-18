@@ -34,7 +34,6 @@ const Program = (props) => {
                         </div>
                     </div>
                     <Player playingData={props.playingData}/>
-
                 </div>
             </div>
         </div>
