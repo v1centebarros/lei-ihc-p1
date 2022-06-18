@@ -33,7 +33,8 @@ const Program = (props) => {
                             </div>                            
                         </div>
                     </div>
-                    <Player/>
+                    <Player playingData={props.playingData}/>
+
                 </div>
             </div>
         </div>

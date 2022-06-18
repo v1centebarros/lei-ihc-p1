@@ -471,7 +471,7 @@ export const fullData = [{
     name: "MegaHits",
     icon: "https://cdn.popcasts.pt/wp-content/uploads/2021/04/MEGA-HITS.jpg",
     banner: "https://images.rfm.sapo.pt/cafe_da_manha_2020_fb59699d93.png",
-    liveNow: "Que barulho é este?",
+    liveNow: "Bota Fora",
     programs: [{
             id: 0,
             name: "Se fosse a ti não atendia!!",

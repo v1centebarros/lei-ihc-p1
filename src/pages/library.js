@@ -131,7 +131,8 @@ const Library = (props) => {
                 <div className="pl-20 overflow-y-auto scrollbar-hide mb-auto">
                     <LibraryContentBar title={option} content={data}/>
                 </div>
-                <Player></Player>
+                <Player playingData={[props.playingData,props.setPlayingData]}/>
+
             </div>
         </div>
     )

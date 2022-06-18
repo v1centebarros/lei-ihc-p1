@@ -11,16 +11,17 @@ import useLocalStorage from 'react-use-localstorage'
 function App() {
 	
 	const [followingRadios, setFollowingRadios] = useLocalStorage('radios', "[]");
+	const [playingData, setPlayingData] = useLocalStorage('playing', "[]");
 
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Home radioData={[followingRadios,setFollowingRadios]}/>} />
-				<Route path="/radio/:id" element={<Radio radioData={[followingRadios,setFollowingRadios]}/>} />
-				<Route path="/radio/:rid/program/:pid" element={<Program radioData={[followingRadios,setFollowingRadios]}/>} />
-				<Route path="/library" element={<Library radioData={[followingRadios,setFollowingRadios]}/>} />
-				<Route path="/search" element={<Search radioData={[followingRadios,setFollowingRadios]}/>} />
-				<Route path="/*" element={<NotFound radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/" element={<Home playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/radio/:id" element={<Radio playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/radio/:rid/program/:pid" element={<Program playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/library" element={<Library playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/search" element={<Search playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
+				<Route path="/*" element={<NotFound playingData={[playingData, setPlayingData]} radioData={[followingRadios,setFollowingRadios]}/>} />
 			</Routes>
 		</BrowserRouter>
   	);

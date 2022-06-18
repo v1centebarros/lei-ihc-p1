@@ -11,7 +11,6 @@ const Radio = (props) => {
     let { id } = useParams();
     let radioData = fullData[id]
     const [followingRadios, setFollowingRadios] = props.radioData
-
     return (
         <div className="h-screen flex flex-col overflow-y-hidden">
             <div className="flex">
@@ -23,7 +22,7 @@ const Radio = (props) => {
                     <div className="overflow-y-hidden flex h-full">
                         <div className="pl-10 flex-1 w-2/3 overflow-y-auto scrollbar-hide">
 
-                            <RadioInformation radioData={[followingRadios,setFollowingRadios]} name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
+                            <RadioInformation radioData={[followingRadios,setFollowingRadios]} playingData={props.playingData} name={radioData.name} liveNow={radioData.liveNow} radioId={id}/>
 
                             <div className="flex flex-wrap w-full mb-8">
                                 <RadioContentBar title={"Popular Shows"} content={radioData.programs} radioId={id}/>
@@ -36,7 +35,8 @@ const Radio = (props) => {
                             <Chat messages={radioData.chat}/>
                         </div>
                     </div>
-                    <Player/>
+                    <Player playingData={props.playingData}/>
+
                 </div>
             </div>
         </div>

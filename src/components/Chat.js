@@ -21,7 +21,7 @@ const Chat = (props) => {
                 }
             </div>
 
-            <div className="items-center bg-neutral-100 ">
+            <div className="items-center bg-neutral-100 h-1/6">
                 <input 
                     onKeyPress={(e) => {
                         if (e.key === "Enter") {
