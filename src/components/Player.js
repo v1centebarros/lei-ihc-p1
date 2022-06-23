@@ -34,7 +34,7 @@ const Player = (props) => {
             <VolumeUp className="text-soft-red my-auto" sx={{ fontSize: 40 }}/>
             <input type="range" className="my-auto pl-3 w-24 form-range appearance-none h-6 p-0 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none "/>
             <span className="uppercase text-white my-auto text-2xl pl-3">Playing: </span>
-            <Marquee delay="2" gradientWidth="0" pauseOnHover="True" className="text-soft-red my-auto font-extralight text-lg ml-2 w-1/2 pr-4">{playingHandler()}</Marquee>
+            <Marquee delay="2" gradientWidth="0" pauseOnHover="True" className="text-white my-auto font-extralight text-lg ml-2 w-1/2 pr-4">{playingHandler()}</Marquee>
             <span className="ml-auto my-auto text-white text-3xl pr-4">YourFM&trade;</span>
         </div>
     )

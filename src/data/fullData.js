@@ -80,47 +80,7 @@ export const fullData = [{
         "title": 2,
         "name": "Laurène",
         "message": "Persevering reciprocal Graphic Interface"
-    }, {
-        "title": 3,
-        "name": "Bécassine",
-        "message": "Focused contextually-based orchestration"
-    }, {
-        "title": 3,
-        "name": "Lén",
-        "message": "Persevering interactive hub"
-    }, {
-        "title": 1,
-        "name": "Thérèse",
-        "message": "Diverse 3rd generation orchestration"
-    }, {
-        "title": 3,
-        "name": "Salomé",
-        "message": "Versatile encompassing website"
-    }, {
-        "title": 2,
-        "name": "Hélène",
-        "message": "Public-key context-sensitive matrix"
-    }, {
-        "title": 2,
-        "name": "Sòng",
-        "message": "Advanced attitude-oriented policy"
-    }, {
-        "title": 1,
-        "name": "Salomé",
-        "message": "Expanded national superstructure"
-    }, {
-        "title": 2,
-        "name": "Fèi",
-        "message": "Fundamental tertiary hierarchy"
-    }, {
-        "title": 1,
-        "name": "Lén",
-        "message": "Inverse real-time benchmark"
-    }, {
-        "title": 1,
-        "name": "Almérinda",
-        "message": "Customizable didactic open system"
-    }, {
+    },{
         "title": 3,
         "name": "Lucrèce",
         "message": "Balanced object-oriented function"
@@ -602,34 +562,6 @@ export const fullData = [{
         "title": 2,
         "name": "Sòng",
         "message": "Advanced attitude-oriented policy"
-    }, {
-        "title": 1,
-        "name": "Salomé",
-        "message": "Expanded national superstructure"
-    }, {
-        "title": 2,
-        "name": "Fèi",
-        "message": "Fundamental tertiary hierarchy"
-    }, {
-        "title": 1,
-        "name": "Lén",
-        "message": "Inverse real-time benchmark"
-    }, {
-        "title": 1,
-        "name": "Almérinda",
-        "message": "Customizable didactic open system"
-    }, {
-        "title": 3,
-        "name": "Lucrèce",
-        "message": "Balanced object-oriented function"
-    }, {
-        "title": 2,
-        "name": "Yóu",
-        "message": "Re-engineered zero defect support"
-    }, {
-        "title": 2,
-        "name": "Eugénie",
-        "message": "Visionary asynchronous policy"
     }]
 },
 
